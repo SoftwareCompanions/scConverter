@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Layers>
+   <layer name="Markup Layer 1" color="#0000FF" enabled='1'/>
+</Layers>
+<Elements>
+
+   <Element>
+      <type>Picture</type>
+      <layer>0</layer>
+      <page>0</page>
+      <locked>1</locked>
+      <center x="50%" y="252"/>
+      <filename>norway.jpg</filename>   
+   </Element>
+
+
+   <Element>
+      <type>Picture</type>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="50%" y="30"/>
+      <filename>sclogo.png</filename>   
+   </Element>
+
+
+   <Element>
+      <type>Picture</type>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="50%" y="50%"/>
+      <size w="60" h="20"/>
+      <filename>sclogo.png</filename>   
+   </Element>
+  
+</Elements>
+</SCMarkupFormat>  

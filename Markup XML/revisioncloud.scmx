@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Layers>
+   <layer name="Markup Layer 1" color="#0000FF" enabled='1'/>
+</Layers>
+<Elements>
+
+   <Element>
+      <type>Revision Cloud</type>
+      <layer>0</layer>
+      <page>0</page>
+      <boundary x1='20' x2='190' y1='60' y2='100'/>
+      <color>#FF0000</color>
+      <fillstyle>0</fillstyle>
+      <linewidth>1</linewidth>      
+   </Element>
+
+   <Element>
+      <type>Revision Cloud</type>
+      <layer>0</layer>
+      <page>0</page>
+      <boundary x1='20' x2='190' y1='140' y2='180'/>
+      <arclimit>8</arclimit>
+      <color>#0000ff</color>
+      <fillstyle>0</fillstyle>
+      <linewidth>1</linewidth>   
+   </Element>
+
+   <Element>
+      <type>Revision Cloud</type>
+      <layer>0</layer>
+      <page>0</page>
+      <boundary x1='20' x2='190' y1='220' y2='260'/>
+      <arclimit>4</arclimit>
+      <color>#00FF00</color>
+      <fillstyle>0</fillstyle>
+      <linewidth>1</linewidth>   
+   </Element>
+
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="50%" y="50"/>
+      <font height="10" facename='Times New Roman'/>
+      <color>#FF0000</color>
+      <text>No arc limit</text>      
+   </Element>
+
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="50%" y="130"/>
+      <font height="10" facename='Times New Roman'/>
+      <color>#0000ff</color>
+      <text>8 mm arc limit</text>      
+   </Element>
+
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="50%" y="210"/>
+      <font height="10" facename='Times New Roman'/>
+      <color>#00FF00</color>
+      <text>4 mm arc limit</text>      
+   </Element>
+   
+</Elements>
+</SCMarkupFormat>  

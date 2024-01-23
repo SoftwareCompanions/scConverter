@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Layers>
+   <layer name="Markup Layer 1" color="#0000FF" enabled='1'/>
+</Layers>
+<Elements>
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>QR</barcodetype>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="40" y="260"/>
+      <size w="40" h="40"/>
+      <user>Terje</user>
+      <text>This is a text</text>
+   </Element>
+   
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>AZTEC</barcodetype>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="100" y="260"/>
+      <size w="40" h="40"/>
+      <user>Terje</user>
+      <text>This is a text</text>
+   </Element>
+   
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>Datamatrix</barcodetype>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="160" y="260"/>
+      <size w="40" h="40"/>
+      <user>Terje</user>
+      <text>This is a text</text>
+   </Element>
+   
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>PDF417</barcodetype>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="60" y="205"/>
+      <size w="80" h="30"/>
+      <user>Terje</user>
+      <text>This is a text</text>
+   </Element>
+
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>ean13</barcodetype>
+      <barcodeincludetext>1</barcodeincludetext>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="160" y="205"/>
+      <size w="80" h="30"/>
+      <user>Terje</user>
+      <text>12345678901234</text>
+   </Element>
+   
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>code39</barcodetype>
+      <barcodeincludetext>0</barcodeincludetext>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="100" y="155"/>
+      <size w="160" h="30"/>
+      <user>Terje</user>
+      <text>12345678901234</text>
+   </Element>
+   
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>code128a</barcodetype>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="100" y="115"/>
+      <size w="160" h="30"/>
+      <user>Terje</user>
+      <text>12345678901234</text>
+   </Element>
+
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>code128b</barcodetype>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="100" y="75"/>
+      <size w="160" h="30"/>
+      <user>Terje</user>
+      <text>12345678901234</text>
+   </Element>
+  
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>QR</barcodetype>
+      <layer>0</layer>
+      <page>-1</page>
+      <center x="50%" y="20"/>
+      <size w="20" h="20"/>
+      <user>Terje</user>
+      <text>This is a text</text>
+   </Element>
+  
+</Elements>
+</SCMarkupFormat>  

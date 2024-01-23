@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Layers>
+   <layer name="Markup Layer" color="#00FF00" enabled='1'/>
+</Layers>
+<Elements>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="50%" y="50%"/>
+      <font height='20' facename='Times New Roman'/>
+      <rotation>45</rotation>
+      <text>Centered Text</text>
+      <textcolor>#FF0000</textcolor>
+   </Element>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="50%" y="80%"/>
+      <font height='10' facename='Times New Roman'/>
+      <rotation>0</rotation>
+      <text>Hyperlink</text>
+      <hyperlink>http://www.softwarecompanions.com</hyperlink>
+      <textcolor>#FF0000</textcolor>
+   </Element>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <insertx>50</insertx>
+      <inserty>50</inserty>
+      <font height='10' facename='Times New Roman'/>
+      <rotation>0</rotation>
+      <text>Aboslute Coordinate Text</text>
+      <textcolor>#0000FF</textcolor>
+   </Element>
+</Elements>
+</SCMarkupFormat>  

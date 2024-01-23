@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Layers>
+   <layer name="Markup Layer 1" color="#0000FF" enabled='1'/>
+   <layer name="Markup Layer 2" color="#00FF00" enabled='1'/>
+</Layers>
+<Elements>
+
+   <Element>
+      <type>Rubber Stamp</type>
+      <layer>0</layer>
+      <page>0</page>
+      <center x="50%" y="240"/>
+      <size w="100" h="20"/>
+      <user>Terje</user>
+      <text>APPROVED</text>
+      <textcolor>#00FF00</textcolor>
+      <backcolor>#CCFFCC</backcolor>
+      <font italic='0' facename='Times New Roman'/>      
+   </Element>
+
+   <Element>
+      <type>Rubber Stamp</type>
+      <layer>1</layer>
+      <page>0</page>
+      <center x="50%" y="50%"/>
+      <size w="100" h="20"/>
+      <user>Terje</user>
+      <rotation>45</rotation>
+      <text>REJECTED</text>
+      <textcolor>#FF0000</textcolor>
+      <backcolor>#FFCCCC</backcolor>
+      <font italic='0' facename='Times New Roman'/>      
+   </Element>
+
+   <Element>
+      <type>Rubber Stamp</type>
+      <layer>1</layer>
+      <page>0</page>
+      <center x="50%" y="25%"/>
+      <size w="100" h="20"/>
+      <user>Terje</user>
+      <rotation>0</rotation>
+      <text>COMPLETED</text>
+      <textcolor>#0000FF</textcolor>
+      <backcolor>#CCCCFF</backcolor>
+      <font italic='0' facename='Arial'/>      
+   </Element>
+  
+</Elements>
+</SCMarkupFormat>  

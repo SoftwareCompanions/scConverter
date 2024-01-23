@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Layers>
+   <layer name="Markup Layer" color="#00FF00" enabled='1'/>
+</Layers>
+<Elements>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <insertx>0</insertx>
+      <inserty>297</inserty>
+      <alignment>1</alignment>
+      <font height='10' facename='Arial'/>
+      <rotation>0</rotation>
+      <text>Top Left</text>
+      <textcolor>#0000FF</textcolor>
+      <locked>1</locked>
+   </Element>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <insertx>0</insertx>
+      <inserty>0</inserty>
+      <alignment>2</alignment>
+      <font height='10' facename='Arial'/>
+      <rotation>0</rotation>
+      <text>Bottom Left</text>
+      <textcolor>#0000FF</textcolor>
+      <locked>1</locked>
+   </Element>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <insertx>210</insertx>
+      <inserty>0</inserty>
+      <alignment>3</alignment>
+      <font height='10' facename='Arial'/>
+      <rotation>0</rotation>
+      <text>Bottom Right</text>
+      <textcolor>#0000FF</textcolor>
+      <locked>1</locked>
+   </Element>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <insertx>210</insertx>
+      <inserty>297</inserty>
+      <alignment>4</alignment>
+      <font height='10' facename='Arial'/>
+      <rotation>0</rotation>
+      <text>Top Right</text>
+      <textcolor>#0000FF</textcolor>
+      <locked>1</locked>
+   </Element>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>0</page>
+      <insertx>105</insertx>
+      <inserty>148.5</inserty>
+      <alignment>0</alignment>
+      <font height='10' facename='Arial'/>
+      <rotation>0</rotation>
+      <text>Center</text>
+      <textcolor>#0000FF</textcolor>
+      <locked>1</locked>
+   </Element>
+</Elements>
+</SCMarkupFormat>  

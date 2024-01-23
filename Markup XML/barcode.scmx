@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Elements>
+   <Element>
+      <type>Barcode</type>
+      <barcodetype>QR</barcodetype>
+      <page>-1</page>
+      <center x="50%" y="25"/>
+      <size w="25" h="25"/>
+      <text>This is a sample text</text>
+   </Element>
+</Elements>
+</SCMarkupFormat>  

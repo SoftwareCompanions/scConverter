@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Elements>
+   <Element>
+      <type>Rubber Stamp</type>
+      <center x="50%" y="50%"/>
+      <size w="150" h="30"/>
+      <rotation>45</rotation>
+      <text>ACCEPTED</text>
+      <textcolor>#0000FF</textcolor>
+      <backcolor>#CCCCFF</backcolor>
+      <font facename='Arial'/>      
+   </Element>
+</Elements>
+</SCMarkupFormat>  
