@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCMarkupFormat>
+<Header>
+   <Unit>mm</Unit>
+</Header>
+<Layers>
+   <layer name="Markup Layer 1" color="#0000FF" enabled='1'/>
+</Layers>
+<Elements>
+   <Element>
+      <type>Text</type>
+      <layer>0</layer>
+      <page>-1</page>
+      <center x="50%" y="50%"/>
+      <color>#000000</color>
+      <transparency>20</transparency>
+      <text>Watermark</text>
+      <rotation>45</rotation>
+      <font height="40" facename='Arial'/>
+   </Element>
+</Elements>
+</SCMarkupFormat> 
