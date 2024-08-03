@@ -57,6 +57,7 @@ namespace scExtractQR
                {
                   System.Console.WriteLine("No QR codes found.");
                }
+               myconverter.CloseFileEx(fileHandle);
             }
             else
             {
