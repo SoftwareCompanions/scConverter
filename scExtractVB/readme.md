@@ -4,5 +4,6 @@ Usage:<br>
 scExtractQR inputfile<br>
 The extracted text from any detected QR will be output to the console.<br>
 <br>
-scConverter Description:<br>
-http://www.softwarecompanions.com/scconverterdll.html
+<a href="http://www.softwarecompanions.com/scconverterdll.html">scConverter Description</a><br>
+<a href="http://www.softwarecompanions.com/scconverter.html">scConverter Documentation (PDF)</a><br>
+
