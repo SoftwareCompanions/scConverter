@@ -1,1 +1,3013 @@
+schema_version: '1.0'
+tool:
+  name: scConverter
+  vendor: Software Companions
+  type: COM/ActiveX
+  com:
+    library: scConverterLib
+    library_uuid: 987D125B-A7E2-4207-B2F5-B2CD744C6CE9
+    library_version: '1.0'
+    coclass: Converter
+    coclass_uuid: 987D125B-A7E2-4207-B2F5-B2CD744C6CE9
+    interface: IConverter
+    interface_uuid: 987D125B-A7E2-4207-B2F5-B2CD744C6CE9
+  enums:
+  - name: SC_PDF_CONFORM
+    values:
+    - name: SC_PDF_NORMALIZE
+      value: 0
+    - name: SC_PDF_PDFA1B
+      value: 1
+    - name: SC_PDF_PDFA2B
+      value: 2
+    - name: SC_PDF_PDFA3B
+      value: 3
+    - name: SC_PDF_PDFA2U
+      value: 4
+    - name: SC_PDF_PDFA3U
+      value: 5
+    - name: SC_PDF_PDFA4
+      value: 6
+    - name: SC_PDF_PDFA4E
+      value: 7
+  - name: enumCompressionMethod
+    values:
+    - name: SC_GZIP
+      value: 0
+    - name: SC_BROTLI
+      value: 1
+    - name: SC_BZIP2
+      value: 2
+    - name: SC_ZSTD
+      value: 3
+  - name: enumResizeMethod
+    values:
+    - name: SC_AVIR
+      value: 0
+    - name: SC_LANCZOS
+      value: 1
+  - name: enumOrientation
+    values:
+    - name: SC_PORTRAIT
+      value: 0
+    - name: SC_LANDSCAPE
+      value: 1
+  methods:
+  - name: Convert
+    dispid: 1
+    signature: HRESULT Convert(BSTR InputFile, BSTR OutputFile, BSTR Format, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetSerialNumber
+    dispid: 2
+    signature: HRESULT SetSerialNumber(BSTR SerialNumber)
+    parameters:
+    - name: SerialNumber
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GerberFormatSettings
+    dispid: 7
+    signature: HRESULT GerberFormatSettings(VARIANT_BOOL Incremental, LONG NumDigits, LONG NumDecimals, LONG Units, VARIANT_BOOL SuppressLeadingZeros,
+      VARIANT_BOOL SuppressTrailingZeros)
+    parameters:
+    - name: Incremental
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    - name: NumDigits
+      type: LONG
+      attributes: null
+      direction: in
+    - name: NumDecimals
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Units
+      type: LONG
+      attributes: null
+      direction: in
+    - name: SuppressLeadingZeros
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    - name: SuppressTrailingZeros
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetFileDimensions
+    dispid: 13
+    signature: HRESULT GetFileDimensions(BSTR InputFile, LONG Page, DOUBLE* OffsetX, DOUBLE* OffsetY, DOUBLE* Width, DOUBLE* Height)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OffsetX
+      type: DOUBLE*
+      attributes: null
+      direction: in
+    - name: OffsetY
+      type: DOUBLE*
+      attributes: null
+      direction: in
+    - name: Width
+      type: DOUBLE*
+      attributes: null
+      direction: in
+    - name: Height
+      type: DOUBLE*
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertToImageFile
+    dispid: 14
+    signature: HRESULT ConvertToImageFile(BSTR InputFile, BSTR OutputFile, BSTR Format, LONG Page, DOUBLE ScaleFactor, LONG ImageWidth, LONG ImageHeight,
+      LONG BitsPerPixel, LONG DPI, LONG Flags, DOUBLE dOffsetX, DOUBLE dOffsetY)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: ImageWidth
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ImageHeight
+      type: LONG
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Flags
+      type: LONG
+      attributes: null
+      direction: in
+    - name: dOffsetX
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: dOffsetY
+      type: DOUBLE
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: AddGerberLayer
+    dispid: 15
+    signature: HRESULT AddGerberLayer(BSTR InputFile, OLE_COLOR Color, LONG Flags)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Color
+      type: OLE_COLOR
+      attributes: null
+      direction: in
+    - name: Flags
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ClearGerberLayers
+    dispid: 16
+    signature: HRESULT ClearGerberLayers()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: ConvertGerberLayersToImage
+    dispid: 17
+    signature: HRESULT ConvertGerberLayersToImage(BSTR OutputFile, BSTR Format, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI, LONG Flags)
+    parameters:
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Flags
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetPenTableEntry
+    dispid: 20
+    signature: HRESULT SetPenTableEntry(long Pen, double Width, long Color, long LineStyle, long EndStyle)
+    parameters:
+    - name: Pen
+      type: long
+      attributes: null
+      direction: in
+    - name: Width
+      type: double
+      attributes: null
+      direction: in
+    - name: Color
+      type: long
+      attributes: null
+      direction: in
+    - name: LineStyle
+      type: long
+      attributes: null
+      direction: in
+    - name: EndStyle
+      type: long
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetPenTableEntry
+    dispid: 21
+    signature: HRESULT GetPenTableEntry(long Pen, double* Width, long* Color, long* LineStyle)
+    parameters:
+    - name: Pen
+      type: long
+      attributes: null
+      direction: in
+    - name: Width
+      type: double*
+      attributes: null
+      direction: in
+    - name: Color
+      type: long*
+      attributes: null
+      direction: in
+    - name: LineStyle
+      type: long*
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: LoadPenTable
+    dispid: 22
+    signature: HRESULT LoadPenTable(BSTR PenTableFile)
+    parameters:
+    - name: PenTableFile
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: CheckFile
+    dispid: 26
+    signature: HRESULT CheckFile(BSTR InputFile)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertToPaperSize
+    dispid: 28
+    signature: HRESULT ConvertToPaperSize(BSTR InputFile, BSTR OutputFile, BSTR Format, LONG PaperSizeIndex, VARIANT_BOOL KeepPaper, LONG Page,
+      LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: PaperSizeIndex
+      type: LONG
+      attributes: null
+      direction: in
+    - name: KeepPaper
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertGerberLayersArea
+    dispid: 29
+    signature: HRESULT ConvertGerberLayersArea(BSTR OutputFile, BSTR Format, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI, double CenterX,
+      double CenterY, double Width, double Height)
+    parameters:
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    - name: CenterX
+      type: double
+      attributes: null
+      direction: in
+    - name: CenterY
+      type: double
+      attributes: null
+      direction: in
+    - name: Width
+      type: double
+      attributes: null
+      direction: in
+    - name: Height
+      type: double
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetNumFilePages
+    dispid: 31
+    signature: HRESULT GetNumFilePages(BSTR InputFile)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertPage
+    dispid: 32
+    signature: HRESULT ConvertPage(BSTR InputFile, BSTR OutputFile, BSTR Format, LONG Page, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFMergeInit
+    dispid: 33
+    signature: HRESULT PDFMergeInit()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: PDFMergeAddFile
+    dispid: 34
+    signature: HRESULT PDFMergeAddFile(BSTR PDFFileName)
+    parameters:
+    - name: PDFFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFMergeClose
+    dispid: 35
+    signature: HRESULT PDFMergeClose(BSTR PDFOutputName)
+    parameters:
+    - name: PDFOutputName
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFSplit
+    dispid: 36
+    signature: HRESULT PDFSplit(BSTR InputFile, BSTR OutputFolder, BSTR FileLabel, LONG PagesPerFile)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFolder
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: FileLabel
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: PagesPerFile
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFEncrypt
+    dispid: 37
+    signature: HRESULT PDFEncrypt(BSTR OriginalFile, BSTR EncryptedFile, BSTR OpenPassword, BSTR OwnerPassword, LONG Restrictions)
+    parameters:
+    - name: OriginalFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: EncryptedFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OpenPassword
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OwnerPassword
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Restrictions
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: OpenFileEx
+    dispid: 38
+    signature: HRESULT OpenFileEx(BSTR FileName, LONG* Handle)
+    parameters:
+    - name: FileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Handle
+      type: LONG*
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: CloseFileEx
+    dispid: 39
+    signature: HRESULT CloseFileEx(LONG Handle)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertFileEx
+    dispid: 40
+    signature: HRESULT ConvertFileEx(LONG Handle, BSTR OutputFile, BSTR Format, LONG Page, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetFileDimensionsEx
+    dispid: 41
+    signature: HRESULT GetFileDimensionsEx(LONG Handle, LONG Page, DOUBLE* OffsetX, DOUBLE* OffsetY, DOUBLE* Width, DOUBLE* Height)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OffsetX
+      type: DOUBLE*
+      attributes: null
+      direction: in
+    - name: OffsetY
+      type: DOUBLE*
+      attributes: null
+      direction: in
+    - name: Width
+      type: DOUBLE*
+      attributes: null
+      direction: in
+    - name: Height
+      type: DOUBLE*
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetNumFilePagesEx
+    dispid: 42
+    signature: HRESULT GetNumFilePagesEx(LONG Handle, LONG* Pages)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Pages
+      type: LONG*
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertToPaperSizeEx
+    dispid: 43
+    signature: HRESULT ConvertToPaperSizeEx(LONG Handle, BSTR OutputFile, BSTR Format, LONG PaperSizeIndex, VARIANT_BOOL KeepPaper, LONG Page,
+      LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: PaperSizeIndex
+      type: LONG
+      attributes: null
+      direction: in
+    - name: KeepPaper
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFMergeAddFileEx
+    dispid: 44
+    signature: HRESULT PDFMergeAddFileEx(BSTR PDFFileName, BSTR PageInformation)
+    parameters:
+    - name: PDFFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: PageInformation
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetPageThumbnailEx
+    dispid: 45
+    signature: HRESULT GetPageThumbnailEx(LONG Handle, LONG Page, LONG Width, LONG Height, LONG BitsPerPixel, IPictureDisp** Thumbnail)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Width
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Height
+      type: LONG
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Thumbnail
+      type: IPictureDisp**
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SaveThumbnailEx
+    dispid: 46
+    signature: HRESULT SaveThumbnailEx(LONG Handle, LONG Page, LONG Width, LONG Height, LONG BitsPerPixel, BSTR Format, BSTR OutputFile)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Width
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Height
+      type: LONG
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetFormatEx
+    dispid: 47
+    signature: HRESULT GetFormatEx(LONG Handle)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertPageToImage
+    dispid: 49
+    signature: HRESULT ConvertPageToImage(BSTR InputFile, LONG Page, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI, IPictureDisp** Picture)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Picture
+      type: IPictureDisp**
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertPageToImageEx
+    dispid: 50
+    signature: HRESULT ConvertPageToImageEx(LONG Handle, LONG Page, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI, IPictureDisp** Picture)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Picture
+      type: IPictureDisp**
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertGerberLayersToImageEx
+    dispid: 51
+    signature: HRESULT ConvertGerberLayersToImageEx(DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI, LONG Flags, IPictureDisp** Picture)
+    parameters:
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Flags
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Picture
+      type: IPictureDisp**
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFToCAD
+    dispid: 55
+    signature: HRESULT PDFToCAD(BSTR InputFileName, BSTR OutputFileName, BSTR Format, LONG PageNo)
+    parameters:
+    - name: InputFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: PageNo
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: TextExtractEx
+    dispid: 59
+    signature: HRESULT TextExtractEx(LONG Handle, LONG Page)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: TIFFSplit
+    dispid: 61
+    signature: HRESULT TIFFSplit(BSTR InputFile, BSTR OutputFolder, BSTR FileLabel)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFolder
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: FileLabel
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetFileRasterInfoEx
+    dispid: 63
+    signature: HRESULT GetFileRasterInfoEx(LONG Handle, LONG Page)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetTIFFCompression
+    dispid: 64
+    signature: HRESULT SetTIFFCompression(LONG Monochrome, LONG Color, LONG TrueColor)
+    parameters:
+    - name: Monochrome
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Color
+      type: LONG
+      attributes: null
+      direction: in
+    - name: TrueColor
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertToStream
+    dispid: 65
+    signature: HRESULT ConvertToStream(BSTR InputFile, BSTR Format, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFConform
+    dispid: 67
+    signature: HRESULT PDFConform(BSTR InputFileName, SC_PDF_CONFORM ConformType, BSTR OutputFileName)
+    parameters:
+    - name: InputFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ConformType
+      type: SC_PDF_CONFORM
+      attributes: null
+      direction: in
+    - name: OutputFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetMargins
+    dispid: 68
+    signature: HRESULT SetMargins(VARIANT_BOOL AddMargins, DOUBLE Left, DOUBLE Top, DOUBLE Right, DOUBLE Bottom)
+    parameters:
+    - name: AddMargins
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    - name: Left
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Top
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Right
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Bottom
+      type: DOUBLE
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFOptimize
+    dispid: 69
+    signature: HRESULT PDFOptimize(BSTR InputFileName, BSTR OutputFileName, long MonoDPI, long ColorDPI, long MonoCompression, long lColorCompression)
+    parameters:
+    - name: InputFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: MonoDPI
+      type: long
+      attributes: null
+      direction: in
+    - name: ColorDPI
+      type: long
+      attributes: null
+      direction: in
+    - name: MonoCompression
+      type: long
+      attributes: null
+      direction: in
+    - name: lColorCompression
+      type: long
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertMarkup
+    dispid: 70
+    signature: HRESULT ConvertMarkup(BSTR InputFile, BSTR Markup, BSTR OutputFile, BSTR Format, DOUBLE ScaleFactor, LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Markup
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: AddMarkupEx
+    dispid: 71
+    signature: HRESULT AddMarkupEx(LONG Handle, BSTR Markup)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Markup
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertToPDF
+    dispid: 72
+    signature: HRESULT ConvertToPDF(BSTR InputFile, BSTR OutputFile)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SaveCompareResult
+    dispid: 75
+    signature: HRESULT SaveCompareResult(BSTR File1, BSTR File2, BSTR FileOutput, BSTR Format, OLE_COLOR crBack, OLE_COLOR crFore, LONG lExportDPI)
+    parameters:
+    - name: File1
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: File2
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: FileOutput
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: crBack
+      type: OLE_COLOR
+      attributes: null
+      direction: in
+    - name: crFore
+      type: OLE_COLOR
+      attributes: null
+      direction: in
+    - name: lExportDPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBOpenFile
+    dispid: 81
+    signature: HRESULT ODBOpenFile(BSTR FileName)
+    parameters:
+    - name: FileName
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBGetNumSets
+    dispid: 82
+    signature: HRESULT ODBGetNumSets()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: ODBGetSetName
+    dispid: 83
+    signature: HRESULT ODBGetSetName(LONG Set)
+    parameters:
+    - name: Set
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBOpenSet
+    dispid: 84
+    signature: HRESULT ODBOpenSet(LONG Set)
+    parameters:
+    - name: Set
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBGetNumLayers
+    dispid: 85
+    signature: HRESULT ODBGetNumLayers()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: ODBGetLayerName
+    dispid: 86
+    signature: HRESULT ODBGetLayerName(LONG Layer)
+    parameters:
+    - name: Layer
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBExportSetToFolder
+    dispid: 87
+    signature: HRESULT ODBExportSetToFolder(BSTR Format, BSTR Folder)
+    parameters:
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Folder
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBExportLayer
+    dispid: 88
+    signature: HRESULT ODBExportLayer(LONG Layer, BSTR Format, BSTR FileName)
+    parameters:
+    - name: Layer
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: FileName
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBExportSetMultiLayer
+    dispid: 89
+    signature: HRESULT ODBExportSetMultiLayer(BSTR Format, BSTR FileName)
+    parameters:
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: FileName
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBExportSetMultiPage
+    dispid: 90
+    signature: HRESULT ODBExportSetMultiPage(BSTR Format, BSTR FileName)
+    parameters:
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: FileName
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ODBOpenCloseSet
+    dispid: 91
+    signature: HRESULT ODBOpenCloseSet()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: ODBOpenCloseFile
+    dispid: 92
+    signature: HRESULT ODBOpenCloseFile()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: SetPDFProperty
+    dispid: 94
+    signature: HRESULT SetPDFProperty(LONG Key, BSTR Value)
+    parameters:
+    - name: Key
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Value
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertFileEx2
+    dispid: 95
+    signature: HRESULT ConvertFileEx2(LONG Handle, BSTR OutputFile, BSTR Format, LONG Page, DOUBLE ScaleFactor, DOUBLE Rotation, LONG BitsPerPixel,
+      LONG DPI)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Rotation
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetPropertyString
+    dispid: 96
+    signature: HRESULT SetPropertyString(LONG ID, BSTR Value)
+    parameters:
+    - name: ID
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Value
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetConfigValue
+    dispid: 97
+    signature: HRESULT SetConfigValue(LONG ID, LONG Value)
+    parameters:
+    - name: ID
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Value
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetPLTPaperSize
+    dispid: 98
+    signature: HRESULT SetPLTPaperSize(LONG Unit, double Width, double Length)
+    parameters:
+    - name: Unit
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Width
+      type: double
+      attributes: null
+      direction: in
+    - name: Length
+      type: double
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetTIFFTag
+    dispid: 99
+    signature: HRESULT SetTIFFTag(LONG Index, BSTR Value)
+    parameters:
+    - name: Index
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Value
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: DrillFormatSettings
+    dispid: 100
+    signature: HRESULT DrillFormatSettings(VARIANT_BOOL bIncremental, LONG lPreceeding, LONG lSucceeding, LONG lUnits, VARIANT_BOOL bLeading,
+      VARIANT_BOOL bTrailing)
+    parameters:
+    - name: bIncremental
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    - name: lPreceeding
+      type: LONG
+      attributes: null
+      direction: in
+    - name: lSucceeding
+      type: LONG
+      attributes: null
+      direction: in
+    - name: lUnits
+      type: LONG
+      attributes: null
+      direction: in
+    - name: bLeading
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    - name: bTrailing
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFFlattenAnnotations
+    dispid: 101
+    signature: HRESULT PDFFlattenAnnotations(BSTR InputFileName, BSTR OutputFileName, LONG Flags)
+    parameters:
+    - name: InputFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFileName
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Flags
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: Convert2
+    dispid: 102
+    signature: HRESULT Convert2(BSTR InputFile, BSTR OutputFile, BSTR Format, DOUBLE ScaleFactor, DOUBLE Rotation, DOUBLE OffsetX, DOUBLE OffsetY)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Rotation
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: OffsetX
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: OffsetY
+      type: DOUBLE
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertGerberLayersToCAD
+    dispid: 103
+    signature: HRESULT ConvertGerberLayersToCAD(BSTR OutputFile, BSTR Format)
+    parameters:
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetPDFCustomProperty
+    dispid: 104
+    signature: HRESULT SetPDFCustomProperty(BSTR Name, BSTR Value)
+    parameters:
+    - name: Name
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Value
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFSignFile
+    dispid: 105
+    signature: HRESULT PDFSignFile(BSTR InputFile, BSTR OutputFile, LONG Position, BSTR ImageFile, BSTR CertificateFile, BSTR CertificatePassword,
+      BSTR Reason, BSTR Location)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Position
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ImageFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: CertificateFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: CertificatePassword
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Reason
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Location
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFExtractPageEx
+    dispid: 106
+    signature: HRESULT PDFExtractPageEx(LONG Handle, LONG Page, BSTR OutputFile)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: CreateGUID
+    dispid: 107
+    signature: HRESULT CreateGUID()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: GetQRImage
+    dispid: 108
+    signature: HRESULT GetQRImage(BSTR TEXT, LONG Size, LONG Margin, LONG ErrorLevel, IPictureDisp** Picture)
+    parameters:
+    - name: TEXT
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Size
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Margin
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ErrorLevel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Picture
+      type: IPictureDisp**
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SaveQRImage
+    dispid: 109
+    signature: HRESULT SaveQRImage(BSTR TEXT, LONG Size, LONG Margin, LONG ErrorLevel, BSTR ImageFile)
+    parameters:
+    - name: TEXT
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Size
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Margin
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ErrorLevel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ImageFile
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: Convert3
+    dispid: 110
+    signature: HRESULT Convert3(BSTR InputFile, BSTR OutputFile, BSTR Format, DOUBLE ScaleFactor, DOUBLE Rotation, LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Rotation
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: VBSOpen
+    dispid: 111
+    signature: HRESULT VBSOpen(BSTR FileName)
+    parameters:
+    - name: FileName
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: VBSClose
+    dispid: 112
+    signature: HRESULT VBSClose()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: VBSConvert
+    dispid: 113
+    signature: HRESULT VBSConvert(BSTR OutputFile, BSTR Format, LONG Page, DOUBLE ScaleFactor, DOUBLE Rotation, LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: ScaleFactor
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Rotation
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: CompressFile
+    dispid: 122
+    signature: HRESULT CompressFile(BSTR InputFile, BSTR OutputFile, enumCompressionMethod CompressionMethod)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: CompressionMethod
+      type: enumCompressionMethod
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: CreateSearchablePDF
+    dispid: 124
+    signature: HRESULT CreateSearchablePDF(BSTR InputFile, BSTR OutputFile)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: DetectQREx
+    dispid: 125
+    signature: HRESULT DetectQREx(LONG Handle, LONG Page, LONG* qrcount)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: qrcount
+      type: LONG*
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetQRTextEx
+    dispid: 126
+    signature: HRESULT GetQRTextEx(LONG Handle, LONG Index, BSTR* Text)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Index
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Text
+      type: BSTR*
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: VBSCreateGUID
+    dispid: 127
+    signature: HRESULT VBSCreateGUID()
+    parameters: []
+    returns:
+      type: HRESULT
+  - name: SetLoadPassword
+    dispid: 128
+    signature: HRESULT SetLoadPassword(BSTR Value)
+    parameters:
+    - name: Value
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ResizeImage
+    dispid: 129
+    signature: HRESULT ResizeImage(BSTR InputFile, BSTR OutputFile, BSTR Format, enumResizeMethod Method, LONG Width, LONG Height)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Method
+      type: enumResizeMethod
+      attributes: null
+      direction: in
+    - name: Width
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Height
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ResizeImageEx
+    dispid: 130
+    signature: HRESULT ResizeImageEx(LONG Handle, LONG Page, BSTR OutputFile, BSTR Format, enumResizeMethod Method, LONG Width, LONG Height)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Method
+      type: enumResizeMethod
+      attributes: null
+      direction: in
+    - name: Width
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Height
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: DeskewImage
+    dispid: 131
+    signature: HRESULT DeskewImage(BSTR InputFile, BSTR OutputFile, BSTR Format, double Angle)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Angle
+      type: double
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: DeskewImageEx
+    dispid: 132
+    signature: HRESULT DeskewImageEx(LONG Handle, LONG Page, BSTR OutputFile, BSTR Format, double Angle)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Angle
+      type: double
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: GetDeskewAngleEx
+    dispid: 133
+    signature: HRESULT GetDeskewAngleEx(LONG Handle, LONG Page)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: DefoxImage
+    dispid: 134
+    signature: HRESULT DefoxImage(BSTR InputFile, BSTR OutputFile, BSTR Format, double Threshold)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Threshold
+      type: double
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: DefoxImageEx
+    dispid: 135
+    signature: HRESULT DefoxImageEx(LONG Handle, LONG Page, BSTR OutputFile, BSTR Format, double Threshold)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Threshold
+      type: double
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: BinarizeImage
+    dispid: 136
+    signature: HRESULT BinarizeImage(BSTR InputFile, BSTR OutputFile, BSTR Format, double Threshold)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Threshold
+      type: double
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: BinarizeImageEx
+    dispid: 137
+    signature: HRESULT BinarizeImageEx(LONG Handle, LONG Page, BSTR OutputFile, BSTR Format, double Threshold)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Threshold
+      type: double
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: CleanupImage
+    dispid: 138
+    signature: HRESULT CleanupImage(BSTR InputFile, BSTR OutputFile, BSTR Format)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: CleanupImageEx
+    dispid: 139
+    signature: HRESULT CleanupImageEx(LONG Handle, LONG Page, BSTR OutputFile, BSTR Format)
+    parameters:
+    - name: Handle
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: VBSResize
+    dispid: 140
+    signature: HRESULT VBSResize(BSTR OutputFile, BSTR Format, LONG Page, LONG Method, LONG Width, LONG Height)
+    parameters:
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Method
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Width
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Height
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SetGerberLayerVisible
+    dispid: 141
+    signature: HRESULT SetGerberLayerVisible(LONG Index, VARIANT_BOOL Visible)
+    parameters:
+    - name: Index
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Visible
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: SaveCompareResultEx
+    dispid: 142
+    signature: HRESULT SaveCompareResultEx(BSTR File1, BSTR File2, BSTR FileOutput, BSTR Format, OLE_COLOR crBack, OLE_COLOR crFore, OLE_COLOR
+      crEqual, LONG lExportDPI)
+    parameters:
+    - name: File1
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: File2
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: FileOutput
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: crBack
+      type: OLE_COLOR
+      attributes: null
+      direction: in
+    - name: crFore
+      type: OLE_COLOR
+      attributes: null
+      direction: in
+    - name: crEqual
+      type: OLE_COLOR
+      attributes: null
+      direction: in
+    - name: lExportDPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFScale
+    dispid: 143
+    signature: HRESULT PDFScale(BSTR InputFile, BSTR OutputFile, DOUBLE ScaleX, DOUBLE ScaleY)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ScaleX
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: ScaleY
+      type: DOUBLE
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFRotatePages
+    dispid: 144
+    signature: HRESULT PDFRotatePages(BSTR InputFile, BSTR OutputFile, BSTR Pages, LONG Rotation)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Pages
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Rotation
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFForceOrientation
+    dispid: 145
+    signature: HRESULT PDFForceOrientation(BSTR InputFile, BSTR OutputFile, BSTR Pages, enumOrientation Orientation)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Pages
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Orientation
+      type: enumOrientation
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertGerberLayersToMP
+    dispid: 146
+    signature: HRESULT ConvertGerberLayersToMP(BSTR OutputFile, BSTR Format, LONG BitsPerPixel, LONG DPI)
+    parameters:
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: BitsPerPixel
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertSVGToImageFile
+    dispid: 147
+    signature: HRESULT ConvertSVGToImageFile(BSTR InputFile, BSTR OutputFile, BSTR Format, LONG MaxSize, LONG DPI)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Format
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: MaxSize
+      type: LONG
+      attributes: null
+      direction: in
+    - name: DPI
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: ConvertSVGToImage
+    dispid: 148
+    signature: HRESULT ConvertSVGToImage(BSTR InputFile, LONG MaxSize, IPictureDisp** Picture)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: MaxSize
+      type: LONG
+      attributes: null
+      direction: in
+    - name: Picture
+      type: IPictureDisp**
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFCreateZUGFeRD
+    dispid: 149
+    signature: HRESULT PDFCreateZUGFeRD(BSTR InputFile, BSTR InvoiceFile, LONG ConformanceType, BSTR OutputFile, BSTR* Errors)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: InvoiceFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: ConformanceType
+      type: LONG
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Errors
+      type: BSTR*
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFAddWatermark
+    dispid: 150
+    signature: HRESULT PDFAddWatermark(BSTR InputFile, BSTR OutputFile, BSTR Pages, BSTR Text, DOUBLE Angle, DOUBLE Opacity, OLE_COLOR Color)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: OutputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Pages
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Text
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Angle
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Opacity
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: Color
+      type: OLE_COLOR
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  - name: PDFPageTile
+    dispid: 152
+    signature: HRESULT PDFPageTile(BSTR InputFile, BSTR Output, VARIANT_BOOL SingleFile, LONG Page, DOUBLE PageW, DOUBLE PageH, LONG NumberOfTiles)
+    parameters:
+    - name: InputFile
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: Output
+      type: BSTR
+      attributes: null
+      direction: in
+    - name: SingleFile
+      type: VARIANT_BOOL
+      attributes: null
+      direction: in
+    - name: Page
+      type: LONG
+      attributes: null
+      direction: in
+    - name: PageW
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: PageH
+      type: DOUBLE
+      attributes: null
+      direction: in
+    - name: NumberOfTiles
+      type: LONG
+      attributes: null
+      direction: in
+    returns:
+      type: HRESULT
+  properties:
+  - name: PDFWriteFormat
+    dispid: 3
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: PDFLargeFormat
+    dispid: 4
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: LastError
+    dispid: 5
+    type: LONG*
+    readable: true
+    writable: false
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters: null
+  - name: PDFLayers
+    dispid: 6
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: GerberApertureFileName
+    dispid: 8
+    type: BSTR*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: BSTR*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: BSTR
+      attributes:
+      - in
+      direction: in
+  - name: IsTrial
+    dispid: 9
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: TIFFSingleStrip
+    dispid: 10
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: DWFUsePaperSize
+    dispid: 11
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: ImportersPath
+    dispid: 12
+    type: BSTR*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: BSTR*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: BSTR
+      attributes:
+      - in
+      direction: in
+  - name: BackgroundColor
+    dispid: 18
+    type: OLE_COLOR*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: OLE_COLOR*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: OLE_COLOR
+      attributes:
+      - in
+      direction: in
+  - name: NumPens
+    dispid: 19
+    type: LONG*
+    readable: true
+    writable: false
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters: null
+  - name: UsePenTable
+    dispid: 23
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: MonochromeMode
+    dispid: 24
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: UseROInstruction
+    dispid: 25
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: PDFMonoRasterCompression
+    dispid: 27
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: PLTEncoded
+    dispid: 30
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: DWFLoadMarkup
+    dispid: 48
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: PDFHighPrecision
+    dispid: 52
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: PDFSearchable
+    dispid: 53
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: DXFDefaultLoadUnit
+    dispid: 54
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: DXFIgnoreWhiteAreas
+    dispid: 56
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: DXFWriteMM
+    dispid: 57
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: PDFTransparency
+    dispid: 58
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: GrayscaleMode
+    dispid: 60
+    type: VARIANT_BOOL
+    readable: true
+    writable: true
+    get_parameters: []
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: DXFForceLineLW
+    dispid: 62
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: DWFExporterDPI
+    dispid: 66
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: SymbolLibraryPath
+    dispid: 73
+    type: BSTR*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: BSTR*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: BSTR
+      attributes:
+      - in
+      direction: in
+  - name: NumSymbolLibraries
+    dispid: 74
+    type: LONG*
+    readable: true
+    writable: false
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters: null
+  - name: Version
+    dispid: 76
+    type: null
+    readable: true
+    writable: false
+    get_parameters: []
+    put_parameters: null
+  - name: DXFExtractImages
+    dispid: 77
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: PDFTrueColorRasterCompression
+    dispid: 78
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: NamedViewsAsBookmarks
+    dispid: 79
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: DWFLoadHiddenText
+    dispid: 80
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: MeasurementViewports
+    dispid: 93
+    type: VARIANT_BOOL*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: VARIANT_BOOL
+      attributes:
+      - in
+      direction: in
+  - name: VBSWidth
+    dispid: 114
+    type: null
+    readable: true
+    writable: false
+    get_parameters: []
+    put_parameters: null
+  - name: VBSHeight
+    dispid: 115
+    type: null
+    readable: true
+    writable: false
+    get_parameters: []
+    put_parameters: null
+  - name: VBSDPI
+    dispid: 116
+    type: null
+    readable: true
+    writable: false
+    get_parameters: []
+    put_parameters: null
+  - name: VBSFormat
+    dispid: 117
+    type: null
+    readable: true
+    writable: false
+    get_parameters: []
+    put_parameters: null
+  - name: VBSPages
+    dispid: 118
+    type: null
+    readable: true
+    writable: false
+    get_parameters: []
+    put_parameters: null
+  - name: VBSPage
+    dispid: 119
+    type: LONG*
+    readable: true
+    writable: true
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters:
+    - name: newVal
+      type: LONG
+      attributes:
+      - in
+      direction: in
+  - name: VBSPixWidth
+    dispid: 120
+    type: LONG*
+    readable: true
+    writable: false
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters: null
+  - name: VBSPixHeight
+    dispid: 121
+    type: LONG*
+    readable: true
+    writable: false
+    get_parameters:
+    - name: pVal
+      type: LONG*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters: null
+  - name: OCRAvailable
+    dispid: 123
+    type: null
+    readable: true
+    writable: false
+    get_parameters: []
+    put_parameters: null
+  - name: InventorAvailable
+    dispid: 151
+    type: VARIANT_BOOL*
+    readable: true
+    writable: false
+    get_parameters:
+    - name: pVal
+      type: VARIANT_BOOL*
+      attributes:
+      - out
+      - retval
+      direction: out
+    put_parameters: null
 
